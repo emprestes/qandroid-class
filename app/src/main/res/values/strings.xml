@@ -6,4 +6,6 @@
     <string name="novoTexto">Testando strings</string>
     <string name="aula04">Aula 04</string>
     <string name="megasena_label">MegaSena</string>
+    <string name="company">Quaddro</string>
+    <string name="carregando">Carregando...</string>
 </resources>
