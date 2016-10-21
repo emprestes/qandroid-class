@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QAndroid100</string>
+    <string name="name">Quem é você?</string>
+    <string name="bt_oi">Oi</string>
+    <string name="teste">oknok</string>
+    <string name="novoTexto">Testando strings</string>
+    <string name="aula04">Aula 04</string>
+    <string name="megasena_label">MegaSena</string>
+</resources>
