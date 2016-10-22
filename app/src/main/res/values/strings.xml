@@ -8,4 +8,8 @@
     <string name="megasena_label">MegaSena</string>
     <string name="company">Quaddro</string>
     <string name="carregando">Carregando...</string>
+    <string name="user">Usuário</string>
+    <string name="password">Sehna</string>
+    <string name="lembrar">Lembrar?</string>
+    <string name="acesso">Acessar</string>
 </resources>

@@ -6,11 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class QuaddroActivity extends AppCompatActivity {
+public abstract class QuaddroActivity extends AppCompatActivity {
 
     protected void setOnClickListener(int id, Class<?> cl) {
         Button btnView = (Button) findViewById(id);
         btnView.setOnClickListener(new OnClickAction(this, cl));
+    }
+
+    protected <T extends View> T getViewById(int id) {
+        return (T) findViewById(id);
     }
 
     private class OnClickAction implements View.OnClickListener {

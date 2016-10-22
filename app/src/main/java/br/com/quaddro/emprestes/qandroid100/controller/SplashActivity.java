@@ -34,7 +34,7 @@ public class SplashActivity extends QuaddroActivity {
         task = new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         };
         timeInMillis = r.getInteger(R.integer.tempo_splash);
