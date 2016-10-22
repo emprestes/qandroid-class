@@ -20,7 +20,6 @@ public class MainActivity extends QuaddroActivity {
 
         Log.d("mqa", "MainActivity criada!");
 
-        setOnClickListener(R.id.btn_aula_04, OiActivity.class);
-        setOnClickListener(R.id.btn_megasena, MegaSenaActivity.class);
+        setOnClickListener(R.id.btn_aulas_01_04, OiActivity.class);
     }
 }
