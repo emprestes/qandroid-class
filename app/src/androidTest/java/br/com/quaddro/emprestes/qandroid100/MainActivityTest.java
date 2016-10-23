@@ -37,7 +37,7 @@ public class MainActivityTest {
     @Test
     public void mainActivityTest() {
         ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.btn_aula_04), withText("Aula 04"), isDisplayed()));
+                allOf(withId(R.id.btn_aulas_01_04), withText("Aula 04"), isDisplayed()));
         appCompatButton.perform(click());
 
         ViewInteraction appCompatButton2 = onView(
