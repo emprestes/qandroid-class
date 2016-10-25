@@ -36,4 +36,24 @@ public class AnimacaoActivity extends QuaddroActivity {
     public void rotacionar02(View view) {
         startAnimation(R.anim.rotacionar_esq);
     }
+
+    public void zoom01(View view) {
+        startAnimation(R.anim.zoom_in);
+    }
+
+    public void zoom02(View view) {
+        startAnimation(R.anim.zoom_out);
+    }
+
+    public void fade01(View view) {
+        startAnimation(R.anim.zoom_in);
+    }
+
+    public void fade02(View view) {
+        startAnimation(R.anim.zoom_out);
+    }
+
+    public void hyperspace(View view) {
+        startAnimation(R.anim.zoom_out);
+    }
 }

@@ -30,4 +30,9 @@
     <string name="animacao">Animações</string>
     <string name="rotacionar01">Rodar 1</string>
     <string name="rotacionar02">Rodar 2</string>
+    <string name="zoom01">Z 1</string>
+    <string name="zoom02">Z 2</string>
+    <string name="fade01">Fade 1</string>
+    <string name="fade02">Fade 2</string>
+    <string name="hyperspace">H Space</string>
 </resources>
