@@ -3,14 +3,21 @@ package br.com.quaddro.emprestes.qandroid100.tablet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import br.com.quaddro.emprestes.qandroid100.domain.model.MegaSena;
+import br.com.quaddro.emprestes.qandroid100.tablet.api.OnSeekBarChangeAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView view;
+    private TextView tvView;
+    private SeekBar sbView;
+    private ListView lvView;
     private MegaSena model;
 
     @Override
@@ -18,32 +25,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        view = (TextView) findViewById(R.id.sorteio);
+        tvView = (TextView) findViewById(R.id.tv_jogos);
+        sbView = (SeekBar) findViewById(R.id.sb_jogos);
+        lvView = (ListView) findViewById(android.R.id.list);
         model = new MegaSena();
+    }
 
-        view.setOnClickListener(new View.OnClickListener() {
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        sbView.setOnSeekBarChangeListener(new OnSeekBarChangeAdapter() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Oi", Toast.LENGTH_LONG).show();
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                tvView.setText(String.valueOf(progress));
             }
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        sortear(view);
-    }
-
     public void sortear(View view) {
-        sortear(this.view);
-    }
+        ArrayList<CharSequence> sorteios;
 
-    public final void sortear(TextView view) {
-        CharSequence sorteio;
+        sorteios = model.sortear(sbView.getProgress());
 
-        sorteio = model.sortear();
-        view.setText(sorteio);
+        lvView.setAdapter(new ArrayAdapter<>(
+                this,
+                R.layout.jogo_view,
+                android.R.id.text1,
+                sorteios));
     }
 }

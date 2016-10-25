@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
-import br.com.quaddro.emprestes.qandroid100.MainActivity;
 import br.com.quaddro.emprestes.qandroid100.R;
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
 

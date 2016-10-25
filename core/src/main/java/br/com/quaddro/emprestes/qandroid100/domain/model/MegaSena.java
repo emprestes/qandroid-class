@@ -1,11 +1,25 @@
 package br.com.quaddro.emprestes.qandroid100.domain.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 // TODO JavaDoc
 public class MegaSena {
 
-    // TODO Gerar construtores.
+    private final Comparator<CharSequence> comparator;
+
+    public MegaSena() {
+        super();
+
+        comparator = new Comparator<CharSequence>() {
+            @Override
+            public int compare(CharSequence p, CharSequence s) {
+                return p.toString().compareTo(s.toString());
+            }
+        };
+    }
 
     /**
      * Gera um sorteio.
@@ -40,6 +54,25 @@ public class MegaSena {
         // 3. Ordenar os números.
         Arrays.sort(sorteio);
 
-        return String.format("%s %s %s %s %s %s", sorteio);
+        return String.format("%02d %02d %02d %02d %02d %02d", sorteio);
+    }
+
+    public ArrayList<CharSequence> sortear(int total) {
+        final ArrayList<CharSequence> list = new ArrayList<>();
+        CharSequence sorteio;
+
+        while (list.size() < total) {
+            sorteio = sortear();
+
+            if (list.contains(sorteio)) {
+                continue;
+            }
+
+            list.add(sorteio);
+        }
+
+        Collections.sort(list, comparator);
+
+        return list;
     }
 }
