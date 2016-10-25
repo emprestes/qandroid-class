@@ -27,4 +27,7 @@
     <string name="password">Sehna</string>
     <string name="lembrar">Lembrar?</string>
     <string name="acesso">Acessar</string>
+    <string name="animacao">Animações</string>
+    <string name="rotacionar01">Rodar 1</string>
+    <string name="rotacionar02">Rodar 2</string>
 </resources>
