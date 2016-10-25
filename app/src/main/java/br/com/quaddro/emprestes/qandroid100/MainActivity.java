@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
-import br.com.quaddro.emprestes.qandroid100.controller.MegaSenaActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
 
 public class MainActivity extends QuaddroActivity {
@@ -21,5 +21,6 @@ public class MainActivity extends QuaddroActivity {
         Log.d("mqa", "MainActivity criada!");
 
         setOnClickListener(R.id.btn_aulas_01_04, OiActivity.class);
+        setOnClickListener(R.id.btn_aulas_05_11, AnimacaoActivity.class);
     }
 }

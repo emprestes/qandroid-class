@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
+import br.com.quaddro.emprestes.qandroid100.MainActivity;
 import br.com.quaddro.emprestes.qandroid100.R;
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
 
@@ -33,7 +34,7 @@ public class SplashActivity extends QuaddroActivity {
         task = new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         };
         timeInMillis = r.getInteger(R.integer.tempo_splash);

@@ -14,9 +14,11 @@
         </activity>
         <activity android:name=".controller.LoginActivity"
             android:noHistory="true" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".controller.OiActivity" />
         <activity android:name=".controller.MegaSenaActivity" />
+        <activity android:name=".controller.AnimacaoActivity" />
     </application>
 
 </manifest>

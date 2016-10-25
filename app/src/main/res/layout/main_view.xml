@@ -15,44 +15,8 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/btn_aula_05"
-            android:text="@string/aula05"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_06"
-            android:text="@string/aula06"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_07"
-            android:text="@string/aula07"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_08"
-            android:text="@string/aula08"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_09"
-            android:text="@string/aula09"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_10"
-            android:text="@string/aula10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_aula_11"
-            android:text="@string/aula11"
+            android:id="@+id/btn_aulas_05_11"
+            android:text="@string/aulas05_11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
