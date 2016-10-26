@@ -19,6 +19,7 @@
         <activity android:name=".controller.OiActivity" />
         <activity android:name=".controller.MegaSenaActivity" />
         <activity android:name=".controller.AnimacaoActivity" />
+        <activity android:name=".controller.SpinnerActivity" />
     </application>
 
 </manifest>
