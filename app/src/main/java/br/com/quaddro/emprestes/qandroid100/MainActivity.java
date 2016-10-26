@@ -1,6 +1,8 @@
 package br.com.quaddro.emprestes.qandroid100;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
@@ -22,5 +24,29 @@ public class MainActivity extends QuaddroActivity {
 
         setOnClickListener(R.id.btn_aulas_01_04, OiActivity.class);
         setOnClickListener(R.id.btn_aulas_05_11, AnimacaoActivity.class);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Deseja ir?")
+                .setCancelable(false)
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+
+        alert.show();
     }
 }
