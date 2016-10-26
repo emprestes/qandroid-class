@@ -46,14 +46,14 @@ public class AnimacaoActivity extends QuaddroActivity {
     }
 
     public void fade01(View view) {
-        startAnimation(R.anim.zoom_in);
+        startAnimation(R.anim.fade_in);
     }
 
     public void fade02(View view) {
-        startAnimation(R.anim.zoom_out);
+        startAnimation(R.anim.fade_out);
     }
 
     public void hyperspace(View view) {
-        startAnimation(R.anim.zoom_out);
+        startAnimation(R.anim.hyperspace);
     }
 }
