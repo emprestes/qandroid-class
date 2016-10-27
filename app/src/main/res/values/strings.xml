@@ -6,7 +6,8 @@
     <string name="novoTexto">Testando strings</string>
     <string name="aulas01_04">Aulas 01_04 - Oi</string>
     <string name="aulas05_11">Aulas 05_11 - MegaSena/Animações</string>
-    <string name="aula12">Aula 12</string>
+    <string name="aula12c">Aula 12 - Câmera</string>
+    <string name="aula12w">Aula 12 - Web</string>
     <string name="aula13">Aula 13</string>
     <string name="aula14">Aula 14</string>
     <string name="aula15">Aula 15</string>
@@ -40,6 +41,8 @@
     <string name="video">Vídeo</string>
     <string name="imagem_cancelada">Imagem Cancelada!</string>
     <string name="video_cancelado">Vídeo Cancelado!</string>
+    <string name="uri">URL</string>
+    <string name="go">IR</string>
 
     <string-array name="emails">
         <item>Casa</item>

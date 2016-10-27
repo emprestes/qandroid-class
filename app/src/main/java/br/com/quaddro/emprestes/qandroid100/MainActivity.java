@@ -10,6 +10,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SpinnerActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.WebActivity;
 
 public class MainActivity extends QuaddroActivity {
 
@@ -27,7 +28,8 @@ public class MainActivity extends QuaddroActivity {
         setOnClickListener(R.id.btn_aulas_01_04, OiActivity.class);
         setOnClickListener(R.id.btn_aulas_05_11, AnimacaoActivity.class);
         setOnClickListener(R.id.btn_aula_11, SpinnerActivity.class);
-        setOnClickListener(R.id.btn_aula_12, CameraActivity.class);
+        setOnClickListener(R.id.btn_aula_12c, CameraActivity.class);
+        setOnClickListener(R.id.btn_aula_12w, WebActivity.class);
     }
 
     @Override

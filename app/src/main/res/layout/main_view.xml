@@ -27,8 +27,14 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/btn_aula_12"
-            android:text="@string/aula12"
+            android:id="@+id/btn_aula_12c"
+            android:text="@string/aula12c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_aula_12w"
+            android:text="@string/aula12w"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
