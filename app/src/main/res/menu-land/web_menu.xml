@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/web_back"
+        android:id="@+id/web_back"
+        android:onClick="onMenuClicked"
+        android:icon="@android:drawable/ic_media_previous" />
+    <item android:title="@string/web_forward"
+        android:onClick="onMenuClicked"
+        android:id="@+id/web_forward"
+        android:icon="@android:drawable/ic_media_next" />
+</menu>
