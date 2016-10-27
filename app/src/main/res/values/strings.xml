@@ -36,6 +36,10 @@
     <string name="fade02">Fade 2</string>
     <string name="hyperspace">H Space</string>
     <string name="aula11">Aula 11 - Spinner</string>
+    <string name="imagem">Imagem</string>
+    <string name="video">Vídeo</string>
+    <string name="imagem_cancelada">Imagem Cancelada!</string>
+    <string name="video_cancelado">Vídeo Cancelado!</string>
 
     <string-array name="emails">
         <item>Casa</item>
