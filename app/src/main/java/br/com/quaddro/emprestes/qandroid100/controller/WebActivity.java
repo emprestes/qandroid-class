@@ -1,7 +1,10 @@
 package br.com.quaddro.emprestes.qandroid100.controller;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,6 +38,8 @@ public class WebActivity extends QuaddroActivity {
         content.getSettings().setJavaScriptEnabled(Boolean.TRUE);
         content.setWebViewClient(client);
 
+        registerForContextMenu(go);
+
         go.setOnClickListener(new View.OnClickListener() {
             private final String http = "http://";
 //            private final String www = "www.";
@@ -50,6 +55,38 @@ public class WebActivity extends QuaddroActivity {
                 content.loadUrl(u);
             }
         });
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        menu.setHeaderTitle(R.string.acesso);
+        menu.add(0, 1, 0, "Chrome");
+        menu.add(0, 2, 0, R.string.go);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        final String http = "http://";
+        String u;
+
+        u = url.getText().toString();
+        u = u.contains(http) ? u : http.concat(u);
+
+        switch (item.getItemId()) {
+            case 1:
+                Uri uri = Uri.parse(u);
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+
+                startActivity(i);
+                break;
+            case 2:
+                content.loadUrl(u);
+                break;
+        }
+
+        return super.onContextItemSelected(item);
     }
 
     @Override
