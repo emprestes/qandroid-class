@@ -25,5 +25,6 @@
         <activity android:name=".controller.SpinnerActivity" />
         <activity android:name=".controller.CameraActivity" />
         <activity android:name=".controller.WebActivity" />
+        <activity android:name=".controller.DrawerActivity" />
     </application>
 </manifest>

@@ -8,7 +8,7 @@
     <string name="aulas05_11">Aulas 05_11 - MegaSena/Animações</string>
     <string name="aula12c">Aula 12 - Câmera</string>
     <string name="aula12w">Aula 12 - Web</string>
-    <string name="aula13">Aula 13</string>
+    <string name="aula13">Aula 13 - Drawer</string>
     <string name="aula14">Aula 14</string>
     <string name="aula15">Aula 15</string>
     <string name="aula16">Aula 16</string>
@@ -45,6 +45,9 @@
     <string name="go">IR</string>
     <string name="web_back">Voltar</string>
     <string name="web_forward">ir</string>
+    <string name="drawer_action">Action</string>
+    <string name="drawer_open">Drawer aberto</string>
+    <string name="drawer_close">Drawer</string>
 
     <string-array name="emails">
         <item>Casa</item>
