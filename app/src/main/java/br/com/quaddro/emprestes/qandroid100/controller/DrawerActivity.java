@@ -5,12 +5,12 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -75,6 +75,11 @@ public class DrawerActivity extends ActionBarActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return toggle.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -126,10 +131,11 @@ public class DrawerActivity extends ActionBarActivity {
 
     private class MyOnItemClickListener implements AdapterView.OnItemClickListener {
 
+        private MyFragment fragment = new MyFragment();
+
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Fragment fragment = new MyFragment()
-                    .setImageResource(myaa.actions[position].img);
+            fragment.setImageResource(myaa.actions[position].img);
             String title;
 
             getSupportFragmentManager()
