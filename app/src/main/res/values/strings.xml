@@ -9,8 +9,7 @@
     <string name="aula12c">Aula 12 - Câmera</string>
     <string name="aula12w">Aula 12 - Web</string>
     <string name="aula13">Aula 13 - Drawer</string>
-    <string name="aula14">Aula 14</string>
-    <string name="aula15">Aula 15</string>
+    <string name="aula15">Aula 15 - ChatHead</string>
     <string name="aula16">Aula 16</string>
     <string name="aula17">Aula 17</string>
     <string name="aula18">Aula 18</string>
@@ -48,6 +47,7 @@
     <string name="drawer_action">Action</string>
     <string name="drawer_open">Drawer aberto</string>
     <string name="drawer_close">Drawer</string>
+    <string name="chat_head">ChatHead Título</string>
 
     <string-array name="emails">
         <item>Casa</item>

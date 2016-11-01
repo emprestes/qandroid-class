@@ -26,5 +26,6 @@
         <activity android:name=".controller.CameraActivity" />
         <activity android:name=".controller.WebActivity" />
         <activity android:name=".controller.DrawerActivity" />
+        <activity android:name=".controller.ChatHeadActivity" />
     </application>
 </manifest>

@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +26,6 @@ public class DrawerActivity extends ActionBarActivity {
 
     private DrawerLayout dl;
     private ListView lv;
-    private FrameLayout fl;
     private ActionBarDrawerToggle toggle;
     private ActionBar ab;
     private MyArrayAdapter myaa;
@@ -40,7 +38,6 @@ public class DrawerActivity extends ActionBarActivity {
 
         dl = (DrawerLayout) findViewById(R.id.drawer);
         lv = (ListView) findViewById(android.R.id.list);
-        fl = (FrameLayout) findViewById(R.id.drawer_content);
         ab = getSupportActionBar();
 
         myaa = new MyArrayAdapter(this,
@@ -131,17 +128,16 @@ public class DrawerActivity extends ActionBarActivity {
 
     private class MyOnItemClickListener implements AdapterView.OnItemClickListener {
 
-        private MyFragment fragment = new MyFragment();
-
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            fragment.setImageResource(myaa.actions[position].img);
+            MyFragment fragment = new MyFragment()
+                    .setImageResource(myaa.actions[position].img);
             String title;
 
             getSupportFragmentManager()
                 .beginTransaction()
-                        .replace(R.id.drawer_content, fragment)
-                        .commit();
+                    .replace(R.id.drawer_content, fragment)
+                    .commit();
 
             lv.setItemChecked(position, true);
             title = myaa.actions[position].label;
