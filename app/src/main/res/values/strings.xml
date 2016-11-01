@@ -10,7 +10,7 @@
     <string name="aula12w">Aula 12 - Web</string>
     <string name="aula13">Aula 13 - Drawer</string>
     <string name="aula15">Aula 15 - ChatHead</string>
-    <string name="aula16">Aula 16</string>
+    <string name="aula16">Aula 16 - SharedPreferences</string>
     <string name="aula17">Aula 17</string>
     <string name="aula18">Aula 18</string>
     <string name="aula19">Aula 19</string>
@@ -48,6 +48,13 @@
     <string name="drawer_open">Drawer aberto</string>
     <string name="drawer_close">Drawer</string>
     <string name="chat_head">ChatHead Título</string>
+    <string name="preferencias">Prerefências</string>
+    <string name="modo_viagem_resumo">Modo Viagem Detalhes</string>
+    <string name="modo_viagem">Modo Viagem</string>
+    <string name="informe_valor_limite">Informe valor limite</string>
+    <string name="valor_limite_detalhe">Valor limite detalhes</string>
+    <string name="valor_limite">Valor Limite</string>
+    <string name="outros">Outros</string>
 
     <string-array name="emails">
         <item>Casa</item>

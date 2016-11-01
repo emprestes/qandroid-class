@@ -1,10 +1,12 @@
 package br.com.quaddro.emprestes.qandroid100.controller;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import br.com.quaddro.emprestes.qandroid100.MainActivity;
 import br.com.quaddro.emprestes.qandroid100.R;
@@ -30,6 +32,23 @@ public class SplashActivity extends QuaddroActivity {
         super.onResume();
         Runnable task;
         Integer timeInMillis;
+
+        {
+            boolean checked = getBooleanOrFalse("modo_viagem");
+            if (checked) {
+                Toast.makeText(this, "Oi", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        { // escopo
+            {
+                {
+                    {
+
+                    }
+                }
+            }
+        }
 
         task = new Runnable() {
             @Override

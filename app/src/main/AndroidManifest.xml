@@ -27,5 +27,6 @@
         <activity android:name=".controller.WebActivity" />
         <activity android:name=".controller.DrawerActivity" />
         <activity android:name=".controller.ChatHeadActivity" />
+        <activity android:name=".controller.SharedPreferenceActivity" />
     </application>
 </manifest>
