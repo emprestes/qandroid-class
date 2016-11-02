@@ -10,7 +10,8 @@
     <string name="aula12w">Aula 12 - Web</string>
     <string name="aula13">Aula 13 - Drawer</string>
     <string name="aula15">Aula 15 - ChatHead</string>
-    <string name="aula16">Aula 16 - SharedPreferences</string>
+    <string name="aula16a">Aula 16 - SharedPreferences</string>
+    <string name="aula16b">Aula 16 - File CSV</string>
     <string name="aula17">Aula 17</string>
     <string name="aula18">Aula 18</string>
     <string name="aula19">Aula 19</string>
@@ -55,6 +56,11 @@
     <string name="valor_limite_detalhe">Valor limite detalhes</string>
     <string name="valor_limite">Valor Limite</string>
     <string name="outros">Outros</string>
+    <string name="carro_criar">Novo</string>
+    <string name="carro_nome">Carro</string>
+    <string name="carro_fabricante">Fabricante</string>
+    <string name="carro_descricao">Descrição</string>
+    <string name="carro_limpar">Limpar</string>
 
     <string-array name="emails">
         <item>Casa</item>

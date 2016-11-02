@@ -10,6 +10,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.ChatHeadActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.DrawerActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.FileCSVActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SharedPreferenceActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SpinnerActivity;
@@ -35,7 +36,8 @@ public class MainActivity extends QuaddroActivity {
         setOnClickListener(R.id.btn_aula_12w, WebActivity.class);
         setOnClickListener(R.id.btn_aula_13, DrawerActivity.class);
         setOnClickListener(R.id.btn_aula_15, ChatHeadActivity.class);
-        setOnClickListener(R.id.btn_aula_16, SharedPreferenceActivity.class);
+        setOnClickListener(R.id.btn_aula_16a, SharedPreferenceActivity.class);
+        setOnClickListener(R.id.btn_aula_16b, FileCSVActivity.class);
     }
 
     @Override

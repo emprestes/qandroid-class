@@ -28,5 +28,7 @@
         <activity android:name=".controller.DrawerActivity" />
         <activity android:name=".controller.ChatHeadActivity" />
         <activity android:name=".controller.SharedPreferenceActivity" />
+        <activity android:name=".controller.FileCSVActivity" />
+        <activity android:name=".controller.NovoCarroActivity" />
     </application>
 </manifest>

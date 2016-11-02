@@ -51,8 +51,14 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/btn_aula_16"
-            android:text="@string/aula16"
+            android:id="@+id/btn_aula_16a"
+            android:text="@string/aula16a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_aula_16b"
+            android:text="@string/aula16b"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
