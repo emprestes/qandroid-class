@@ -40,7 +40,7 @@ public class NovoCarroActivity extends QuaddroActivity {
     public void salvar(View view) {
         try {
             CarroCSVHelper.getInstance(this)
-                    .salvar(nomeView.getText(),
+                    .inserir(nomeView.getText(),
                             fabricanteView.getText(),
                             descricaoView.getText(), "carros.csv");
 

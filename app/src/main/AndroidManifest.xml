@@ -30,5 +30,8 @@
         <activity android:name=".controller.SharedPreferenceActivity" />
         <activity android:name=".controller.FileCSVActivity" />
         <activity android:name=".controller.NovoCarroActivity" />
+        <activity android:name=".controller.AlterarCarroActivity" />
+        <activity android:name=".controller.SQLiteActivity" />
+        <activity android:name=".controller.MensagemActivity" />
     </application>
 </manifest>

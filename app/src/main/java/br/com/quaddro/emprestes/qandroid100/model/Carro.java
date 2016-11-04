@@ -1,5 +1,7 @@
 package br.com.quaddro.emprestes.qandroid100.model;
 
+import android.provider.BaseColumns;
+
 import java.io.Serializable;
 
 public class Carro implements Serializable {
@@ -18,6 +20,10 @@ public class Carro implements Serializable {
 
     public static Carro criar(String[] campos) {
         return criar(campos[0], campos[1], campos[2]);
+    }
+
+    public static Carro criar(CharSequence nome, CharSequence fabricante) {
+        return criar(nome, fabricante, "");
     }
 
     public static Carro criar(CharSequence nome, CharSequence fabricante, CharSequence descricao) {
@@ -49,11 +55,30 @@ public class Carro implements Serializable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Carro)) return false;
+
+        Carro carro = (Carro) o;
+
+        if (getNome() != null ? !getNome().equals(carro.getNome()) : carro.getNome() != null)
+            return false;
+        return getFabricante() != null ? getFabricante().equals(carro.getFabricante()) : carro.getFabricante() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getNome() != null ? getNome().hashCode() : 0;
+        result = 31 * result + (getFabricante() != null ? getFabricante().hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return String.format("%s / %s", nome, fabricante);
     }
 
     public String toCSV() {
-        return String.format("%n%s;%s;%s", nome, fabricante, descricao);
+        return String.format("%s;%s;%s", nome, fabricante, descricao);
     }
 }
