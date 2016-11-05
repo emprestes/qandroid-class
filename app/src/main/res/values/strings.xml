@@ -62,6 +62,7 @@
     <string name="carro_descricao">Descrição</string>
     <string name="carro_limpar">Limpar</string>
     <string name="carro_alterar">Alterar</string>
+    <string name="mensagem_criar">Nova</string>
 
     <string-array name="emails">
         <item>Casa</item>
