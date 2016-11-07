@@ -12,9 +12,8 @@
     <string name="aula15">Aula 15 - ChatHead</string>
     <string name="aula16a">Aula 16 - SharedPreferences</string>
     <string name="aula16b">Aula 16 - File CSV</string>
-    <string name="aula17">Aula 17 - SQLite</string>
-    <string name="aula18">Aula 18</string>
-    <string name="aula19">Aula 19</string>
+    <string name="aula17">Aula 17_18 - SQLite</string>
+    <string name="aula19">Aula 19 - Service</string>
     <string name="aula20">Aula 20</string>
     <string name="aula21">Aula 21</string>
     <string name="aula22">Aula 22</string>

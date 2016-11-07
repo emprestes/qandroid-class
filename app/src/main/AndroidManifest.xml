@@ -35,5 +35,7 @@
         <activity android:name=".controller.MensagemActivity" />
         <activity android:name=".controller.NovaMensagemActivity" />
         <activity android:name=".controller.AlterarMensagemActivity" />
+
+        <service android:name=".controller.MensagemService" />
     </application>
 </manifest>

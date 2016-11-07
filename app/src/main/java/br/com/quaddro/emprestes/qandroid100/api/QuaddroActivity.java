@@ -9,21 +9,47 @@ import android.widget.Button;
 
 public abstract class QuaddroActivity extends AppCompatActivity {
 
-    protected void setOnClickListener(int id, Class<?> cl) {
+    protected void setOnClickActivity(int id, Class<?> cl) {
         Button btnView = (Button) findViewById(id);
-        btnView.setOnClickListener(new OnClickAction(this, cl));
+        btnView.setOnClickListener(new OnClickActivity(this, cl));
+    }
+
+    protected void setOnClickService(int id, Class<?> cl) {
+        Button btnView = (Button) findViewById(id);
+        btnView.setOnClickListener(new OnClickService(this, cl));
     }
 
     protected <T extends View> T getViewById(int id) {
         return (T) findViewById(id);
     }
 
-    private class OnClickAction implements View.OnClickListener {
+    private class OnClickService implements View.OnClickListener {
 
         private Context c;
         private Class<?> cl;
 
-        OnClickAction(Context c, Class<?> cl) {
+        OnClickService(Context c, Class<?> cl) {
+            super();
+
+            this.c = c;
+            this.cl = cl;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(c, cl);
+
+            startService(i);
+        }
+    }
+
+
+    private class OnClickActivity implements View.OnClickListener {
+
+        private Context c;
+        private Class<?> cl;
+
+        OnClickActivity(Context c, Class<?> cl) {
             super();
 
             this.c = c;

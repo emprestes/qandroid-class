@@ -13,11 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.TextView;
 
 import br.com.quaddro.emprestes.qandroid100.R;
 import br.com.quaddro.emprestes.qandroid100.repository.Entity;
-import br.com.quaddro.emprestes.qandroid100.util.CarroCSVHelper;
 import br.com.quaddro.emprestes.qandroid100.util.MensagemSQLiteHelper;
 
 public class SQLiteActivity extends ListActivity {
