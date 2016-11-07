@@ -60,7 +60,7 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void apagar(Integer id) {
+    public void apagar(Long id) {
         try (SQLiteDatabase db = getWritableDatabase()) {
             db.delete(TABLE, SQL.DELETE, new String[]{id.toString()});
         }
@@ -70,6 +70,10 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
         try (SQLiteDatabase db = getWritableDatabase()) {
             db.delete(TABLE, null, null); // DELETE FROM mensagem;
         }
+    }
+
+    public void atualizar(Long id, CharSequence titulo, CharSequence corpo) {
+        atualizar(Mensagem.criar(id, titulo, corpo));
     }
 
     public void atualizar(Mensagem model) {
@@ -93,5 +97,17 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
                 null,           // having
                 null,           // orderBy
                 null);          // limit
+    }
+
+    public Cursor recuperar(Long id) {
+        SQLiteDatabase db = getReadableDatabase();
+        return db.query(TABLE,
+                SQL.Select.ALL,
+                SQL.Select.WHERE_ID,
+                new String[] { id.toString() },
+                null,
+                null,
+                null,
+                null);
     }
 }

@@ -56,13 +56,19 @@
     <string name="valor_limite_detalhe">Valor limite detalhes</string>
     <string name="valor_limite">Valor Limite</string>
     <string name="outros">Outros</string>
+    <!-- Carro -->
     <string name="carro_criar">Novo</string>
     <string name="carro_nome">Carro</string>
     <string name="carro_fabricante">Fabricante</string>
     <string name="carro_descricao">Descrição</string>
     <string name="carro_limpar">Limpar</string>
     <string name="carro_alterar">Alterar</string>
+    <!-- Mensagem -->
     <string name="mensagem_criar">Nova</string>
+    <string name="mensagem_nome">Mensagem</string>
+    <string name="mensagem_corpo">Corpo</string>
+    <string name="mensagem_limpar">Limpar</string>
+    <string name="mensagem_alterar">Alterar</string>
 
     <string-array name="emails">
         <item>Casa</item>

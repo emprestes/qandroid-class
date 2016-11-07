@@ -4,34 +4,33 @@ import java.io.Serializable;
 
 public class Mensagem implements Serializable {
 
-    private Integer id;
+    private Long id;
     private CharSequence titulo;
     private CharSequence corpo;
 
-
-    private Mensagem(Integer id, CharSequence titulo, CharSequence corpo) {
+    private Mensagem(Long id, CharSequence titulo, CharSequence corpo) {
         this.id = id;
         this.titulo = titulo;
         this.corpo = corpo;
     }
 
     public static Mensagem criar(CharSequence titulo, CharSequence corpo) {
-        return criar((Integer) null, titulo, corpo);
+        return criar((Long) null, titulo, corpo);
     }
 
     public static Mensagem criar(String id, CharSequence titulo, CharSequence corpo) {
-        return criar(Integer.valueOf(id), titulo, corpo);
+        return criar(Long.valueOf(id), titulo, corpo);
     }
 
-    public static Mensagem criar(Integer id, CharSequence titulo, CharSequence corpo) {
+    public static Mensagem criar(Long id, CharSequence titulo, CharSequence corpo) {
         return new Mensagem(id, titulo, corpo);
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

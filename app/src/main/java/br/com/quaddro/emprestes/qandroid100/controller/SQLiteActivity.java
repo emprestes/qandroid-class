@@ -1,18 +1,80 @@
 package br.com.quaddro.emprestes.qandroid100.controller;
 
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Bundle;
 import android.support.v4.widget.CursorAdapter;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 import br.com.quaddro.emprestes.qandroid100.R;
 import br.com.quaddro.emprestes.qandroid100.repository.Entity;
+import br.com.quaddro.emprestes.qandroid100.util.CarroCSVHelper;
 import br.com.quaddro.emprestes.qandroid100.util.MensagemSQLiteHelper;
 
 public class SQLiteActivity extends ListActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, final long id) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SQLiteActivity.this);
+
+                builder.setMessage("Ações")
+                        .setCancelable(false)
+                        .setPositiveButton("Alterar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(SQLiteActivity.this, AlterarMensagemActivity.class);
+
+                                i.putExtra("id", id);
+
+                                startActivity(i);
+                            }
+                        })
+                        .setNegativeButton("Apagar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(SQLiteActivity.this);
+
+                                builder.setMessage("Confirmar?")
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                try {
+                                                    MensagemSQLiteHelper.getInstance(getApplicationContext())
+                                                            .apagar(id);
+
+                                                    onResume();
+                                                } catch (Exception cause) {
+                                                    Log.e("carros.csv", "PROBLEMAS AO APAGAR", cause);
+                                                }
+                                            }
+                                        });
+
+                                AlertDialog alert = builder.create();
+
+                                alert.show();
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+
+                alert.show();
+            }
+        });
+    }
 
     @Override
     protected void onResume() {

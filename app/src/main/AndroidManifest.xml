@@ -34,5 +34,6 @@
         <activity android:name=".controller.SQLiteActivity" />
         <activity android:name=".controller.MensagemActivity" />
         <activity android:name=".controller.NovaMensagemActivity" />
+        <activity android:name=".controller.AlterarMensagemActivity" />
     </application>
 </manifest>
