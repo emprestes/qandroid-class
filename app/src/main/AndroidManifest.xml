@@ -29,7 +29,8 @@
         <activity android:name=".controller.DrawerActivity" />
         <activity android:name=".controller.ChatHeadActivity" />
         <activity android:name=".controller.SharedPreferenceActivity" />
-        <activity android:name=".controller.FileCSVActivity" />
+        <activity android:name=".controller.FileCSVActivity"
+            android:theme="@style/Base.Theme.AppCompat.CompactMenu" />
         <activity android:name=".controller.NovoCarroActivity" />
         <activity android:name=".controller.AlterarCarroActivity" />
         <activity android:name=".controller.SQLiteActivity" />

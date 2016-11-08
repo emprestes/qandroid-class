@@ -2,10 +2,12 @@ package br.com.quaddro.emprestes.qandroid100.util;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -122,7 +124,7 @@ public final class CarroCSVHelper {
         }
     }
 
-    public List<Carro> listarTodos(String arquivo) {
+    public List<Carro> listarTodos(String arquivo) throws IOException {
         List<Carro> list = new ArrayList<>();
 
         // try-with-resources (Closeable)
@@ -150,8 +152,6 @@ public final class CarroCSVHelper {
             } finally {
                 b.close();
             }
-        } catch (IOException cause) {
-            Log.e("CSV", "Problemas", cause);
         }
 
         return list;

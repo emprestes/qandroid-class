@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 import br.com.quaddro.emprestes.qandroid100.R;
@@ -84,8 +86,15 @@ public class FileCSVActivity extends ListActivity {
         super.onResume();
         List<Carro> list;
 
-        list = CarroCSVHelper.getInstance(this).listarTodos("carros.csv");
-        setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list));
+        try {
+            list = CarroCSVHelper.getInstance(this).listarTodos("carros.csv");
+            setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list));
+        } catch (FileNotFoundException cause) {
+            Toast.makeText(this, "Lista vazia!", Toast.LENGTH_SHORT).show();
+            Log.e("CSV", "Lista vazia!", cause);
+        } catch (IOException cause) {
+            Log.e("CSV", "Problemas", cause);
+        }
     }
 
     @Override
