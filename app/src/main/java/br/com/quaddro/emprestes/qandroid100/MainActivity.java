@@ -2,8 +2,10 @@ package br.com.quaddro.emprestes.qandroid100;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.View;
 
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
@@ -11,6 +13,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.ChatHeadActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.DrawerActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.FileCSVActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.JogoBolaActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.MensagemService;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SQLiteActivity;
@@ -42,6 +45,15 @@ public class MainActivity extends QuaddroActivity {
         setOnClickActivity(R.id.btn_aula_16b, FileCSVActivity.class);
         setOnClickActivity(R.id.btn_aula_17, SQLiteActivity.class);
         setOnClickService(R.id.btn_aula_19, MensagemService.class);
+        setOnClick(R.id.btn_aula_20a, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator vi = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+                vi.vibrate(new long[]{500, 100, 500, 100}, 3);
+            }
+        });
+        setOnClickActivity(R.id.btn_aula_20b, JogoBolaActivity.class);
     }
 
     @Override

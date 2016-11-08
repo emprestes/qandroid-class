@@ -19,6 +19,11 @@ public abstract class QuaddroActivity extends AppCompatActivity {
         btnView.setOnClickListener(new OnClickService(this, cl));
     }
 
+    protected void setOnClick(int id, View.OnClickListener a) {
+        Button btnView = getViewById(id);
+        btnView.setOnClickListener(a);
+    }
+
     protected <T extends View> T getViewById(int id) {
         return (T) findViewById(id);
     }
