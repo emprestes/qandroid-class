@@ -2,4 +2,5 @@
 <br.com.quaddro.emprestes.qandroid100.view.BolaView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:id="@+id/bola_view" />
