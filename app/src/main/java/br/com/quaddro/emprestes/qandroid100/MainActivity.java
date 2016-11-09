@@ -13,6 +13,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.ChatHeadActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.DrawerActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.FileCSVActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.GPSActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.JogoBolaActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.MensagemService;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends QuaddroActivity {
             }
         });
         setOnClickActivity(R.id.btn_aula_20b, JogoBolaActivity.class);
+        setOnClickActivity(R.id.btn_aula_21, GPSActivity.class);
     }
 
     @Override

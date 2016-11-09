@@ -68,6 +68,10 @@
     <string name="mensagem_corpo">Corpo</string>
     <string name="mensagem_limpar">Limpar</string>
     <string name="mensagem_alterar">Alterar</string>
+    <string name="gps">GPS</string>
+    <string name="gps_localizacao">Localização</string>
+    <string name="gps_endereco">Endereço</string>
+    <string name="aula21">AULA 21 - GPS</string>
 
     <string-array name="emails">
         <item>Casa</item>
