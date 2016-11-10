@@ -4,50 +4,58 @@ import java.io.Serializable;
 
 public class Mensagem implements Serializable {
 
-    private Long id;
-    private CharSequence titulo;
-    private CharSequence corpo;
+    private Long nid;
+    private String title;
+    private String body;
 
-    private Mensagem(Long id, CharSequence titulo, CharSequence corpo) {
-        this.id = id;
-        this.titulo = titulo;
-        this.corpo = corpo;
+    private Mensagem(Long nid, String title, String body) {
+        this.nid = nid;
+        this.title = title;
+        this.body = body;
     }
 
     public static Mensagem criar(CharSequence titulo, CharSequence corpo) {
+        return criar(titulo.toString(), corpo.toString());
+    }
+
+    public static Mensagem criar(String titulo, String corpo) {
         return criar((Long) null, titulo, corpo);
     }
 
-    public static Mensagem criar(String id, CharSequence titulo, CharSequence corpo) {
+    public static Mensagem criar(Long id, CharSequence titulo, CharSequence corpo) {
+        return criar(id, titulo.toString(), corpo.toString());
+    }
+
+    public static Mensagem criar(String id, String titulo, String corpo) {
         return criar(Long.valueOf(id), titulo, corpo);
     }
 
-    public static Mensagem criar(Long id, CharSequence titulo, CharSequence corpo) {
+    public static Mensagem criar(Long id, String titulo, String corpo) {
         return new Mensagem(id, titulo, corpo);
     }
 
-    public Long getId() {
-        return id;
+    public Long getNid() {
+        return nid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setNid(Long nid) {
+        this.nid = nid;
     }
 
-    public CharSequence getTitulo() {
-        return titulo;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitulo(CharSequence titulo) {
-        this.titulo = titulo;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public CharSequence getCorpo() {
-        return corpo;
+    public String getBody() {
+        return body;
     }
 
-    public void setCorpo(CharSequence corpo) {
-        this.corpo = corpo;
+    public void setBody(String body) {
+        this.body = body;
     }
 
     @Override
@@ -57,28 +65,28 @@ public class Mensagem implements Serializable {
 
         Mensagem mensagem = (Mensagem) o;
 
-        if (getId() != null ? !getId().equals(mensagem.getId()) : mensagem.getId() != null)
+        if (getNid() != null ? !getNid().equals(mensagem.getNid()) : mensagem.getNid() != null)
             return false;
-        if (getTitulo() != null ? !getTitulo().equals(mensagem.getTitulo()) : mensagem.getTitulo() != null)
+        if (getTitle() != null ? !getTitle().equals(mensagem.getTitle()) : mensagem.getTitle() != null)
             return false;
-        return getCorpo() != null ? getCorpo().equals(mensagem.getCorpo()) : mensagem.getCorpo() == null;
+        return getBody() != null ? getBody().equals(mensagem.getBody()) : mensagem.getBody() == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = getId() != null ? getId().hashCode() : 0;
-        result = 31 * result + (getTitulo() != null ? getTitulo().hashCode() : 0);
-        result = 31 * result + (getCorpo() != null ? getCorpo().hashCode() : 0);
+        int result = getNid() != null ? getNid().hashCode() : 0;
+        result = 31 * result + (getTitle() != null ? getTitle().hashCode() : 0);
+        result = 31 * result + (getBody() != null ? getBody().hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Mensagem{");
-        sb.append("id=").append(id);
-        sb.append(", titulo='").append(titulo).append('\'');
-        sb.append(", corpo='").append(corpo).append('\'');
+        sb.append("nid=").append(nid);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", body='").append(body).append('\'');
         sb.append('}');
         return sb.toString();
     }

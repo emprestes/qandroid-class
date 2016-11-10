@@ -6,12 +6,22 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import br.com.quaddro.emprestes.qandroid100.R;
+import br.com.quaddro.emprestes.qandroid100.model.Mensagem;
+import br.com.quaddro.emprestes.qandroid100.retrofit.MensagemWS;
+import br.com.quaddro.emprestes.qandroid100.util.MensagemRetrofitHelper;
+import br.com.quaddro.emprestes.qandroid100.util.MensagemSQLiteHelper;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MensagemService extends Service {
 
@@ -31,21 +41,59 @@ public class MensagemService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("mservice", "onStartCommand");
 
-        Context c =  getApplicationContext();
-        PendingIntent pi = PendingIntent.getActivity(c,
-                500,
-                new Intent(c, SQLiteActivity.class),
-                PendingIntent.FLAG_ONE_SHOT);
-        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        Notification n = new Notification.Builder(c)
-                .setContentTitle(c.getResources().getString(R.string.mensagem_criar))
-                .setContentIntent(pi)
-                .setAutoCancel(Boolean.TRUE)
-                .setVibrate(new long[] {1000, 500, 1000, 500})
-                .setSmallIcon(R.mipmap.quaddro)
-                .build();
+        // Retrofit
+        MensagemRetrofitHelper helper;
+        MensagemWS ws;
+        Call<List<Mensagem>> call;
+        final List<Mensagem> list;
+        final Context c;
 
-        nm.notify(125, n);
+        c = getApplicationContext();
+        list = new ArrayList<>();
+        helper = MensagemRetrofitHelper.getInstance();
+        ws = helper.getWs();
+        call = ws.listarTodas();
+
+        call.enqueue(new Callback<List<Mensagem>>() {
+            @Override
+            public void onResponse(Call<List<Mensagem>> call, Response<List<Mensagem>> response) {
+                MensagemSQLiteHelper helper;
+                Iterator<Mensagem> i;
+
+                helper = MensagemSQLiteHelper.getInstance(c);
+                list.addAll(response.body());
+                i = list.iterator();
+
+                while (i.hasNext()) {
+                    helper.inserir(i.next());
+                }
+
+                Log.i("RETROFIT", "ENCONTRADOS: " + list.size());
+            }
+
+            @Override
+            public void onFailure(Call<List<Mensagem>> call, Throwable t) {
+                Log.e("RETROFIT", "PROBLEMAS", t);
+            }
+        });
+
+        // Notification
+        if (!list.isEmpty()) {
+            PendingIntent pi = PendingIntent.getActivity(c,
+                    500,
+                    new Intent(c, SQLiteActivity.class),
+                    PendingIntent.FLAG_ONE_SHOT);
+            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            Notification n = new Notification.Builder(c)
+                    .setContentTitle(c.getResources().getString(R.string.mensagem_criar))
+                    .setContentIntent(pi)
+                    .setAutoCancel(Boolean.TRUE)
+                    .setVibrate(new long[]{1000, 500, 1000, 500})
+                    .setSmallIcon(R.mipmap.quaddro)
+                    .build();
+
+            nm.notify(125, n);
+        }
 
         return super.onStartCommand(intent, flags, startId);
     }

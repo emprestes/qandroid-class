@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import br.com.quaddro.emprestes.qandroid100.model.Mensagem;
 import br.com.quaddro.emprestes.qandroid100.repository.DB;
+import br.com.quaddro.emprestes.qandroid100.repository.Entity;
 
 import static br.com.quaddro.emprestes.qandroid100.repository.Entity.Mensagem.TABLE;
 import static br.com.quaddro.emprestes.qandroid100.repository.Entity.Mensagem.Columns;
@@ -31,7 +32,7 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL.CREATE);
+        db.execSQL(Entity.Mensagem.SQL.CREATE);
     }
 
     @Override
@@ -47,8 +48,8 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
         try (SQLiteDatabase db = getWritableDatabase()) {
             ContentValues values = new ContentValues();
 
-            values.put(Columns.TITULO, model.getTitulo().toString());
-            values.put(Columns.CORPO, model.getCorpo().toString());
+            values.put(Columns.TITULO, model.getTitle().toString());
+            values.put(Columns.CORPO, model.getBody().toString());
 
             db.insert(TABLE, null, values);
         }
@@ -56,7 +57,7 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
 
     public void apagar(Mensagem model) {
         if (model != null) {
-            apagar(model.getId());
+            apagar(model.getNid());
         }
     }
 
@@ -80,10 +81,10 @@ public class MensagemSQLiteHelper extends SQLiteOpenHelper {
         try (SQLiteDatabase db = getWritableDatabase()) {
             ContentValues values = new ContentValues();
 
-            values.put(Columns.TITULO, model.getTitulo().toString());
-            values.put(Columns.CORPO, model.getCorpo().toString());
+            values.put(Columns.TITULO, model.getTitle().toString());
+            values.put(Columns.CORPO, model.getBody().toString());
 
-            db.update(TABLE, values, SQL.UPDATE, new String[] { model.getId().toString() });
+            db.update(TABLE, values, SQL.UPDATE, new String[] { model.getNid().toString() });
         }
     }
 

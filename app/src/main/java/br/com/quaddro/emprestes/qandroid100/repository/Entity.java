@@ -24,4 +24,8 @@ public interface Entity {
             }
         }
     }
+
+    interface  Table2 {
+        String TABLE = "table2";
+    }
 }
