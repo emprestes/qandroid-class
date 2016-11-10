@@ -49,6 +49,7 @@
         <activity android:name=".controller.CEPActivity" />
 
         <service android:name=".controller.MensagemService" />
+        <service android:name=".controller.CEPService" />
 
         <receiver android:name=".content.MessageBroadcastReceiver">
             <intent-filter>
