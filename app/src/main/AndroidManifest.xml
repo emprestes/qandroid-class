@@ -46,6 +46,7 @@
         <activity android:name=".controller.JogoBolaActivity" />
         <activity android:name=".controller.SensorActivity" />
         <activity android:name=".controller.GPSActivity" />
+        <activity android:name=".controller.CEPActivity" />
 
         <service android:name=".controller.MensagemService" />
 

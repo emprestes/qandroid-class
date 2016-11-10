@@ -71,7 +71,11 @@
     <string name="gps">GPS</string>
     <string name="gps_localizacao">Localização</string>
     <string name="gps_endereco">Endereço</string>
-    <string name="aula21">AULA 21 - GPS</string>
+    <string name="aula21a">AULA 21 - GPS</string>
+    <string name="aula21b">AULA 21 - CEP</string>
+    <string name="cep_endereco">Endereço</string>
+    <string name="cep">CEP</string>
+    <string name="cep_buscar">Buscar</string>
 
     <string-array name="emails">
         <item>Casa</item>
