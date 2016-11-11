@@ -45,11 +45,9 @@ public class MensagemService extends Service {
         MensagemRetrofitHelper helper;
         MensagemWS ws;
         Call<List<Mensagem>> call;
-        final List<Mensagem> list;
         final Context c;
 
         c = getApplicationContext();
-        list = new ArrayList<>();
         helper = MensagemRetrofitHelper.getInstance();
         ws = helper.getWs();
         call = ws.listarTodas();
@@ -59,9 +57,10 @@ public class MensagemService extends Service {
             public void onResponse(Call<List<Mensagem>> call, Response<List<Mensagem>> response) {
                 MensagemSQLiteHelper helper;
                 Iterator<Mensagem> i;
+                List<Mensagem> list;
 
                 helper = MensagemSQLiteHelper.getInstance(c);
-                list.addAll(response.body());
+                list = response.body();
                 i = list.iterator();
 
                 while (i.hasNext()) {
@@ -69,6 +68,24 @@ public class MensagemService extends Service {
                 }
 
                 Log.i("RETROFIT", "ENCONTRADOS: " + list.size());
+
+                // Notification
+                if (!list.isEmpty()) {
+                    PendingIntent pi = PendingIntent.getActivity(c,
+                            500,
+                            new Intent(c, SQLiteActivity.class),
+                            PendingIntent.FLAG_ONE_SHOT);
+                    NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    Notification n = new Notification.Builder(c)
+                            .setContentTitle(c.getResources().getString(R.string.mensagem_criar))
+                            .setContentIntent(pi)
+                            .setAutoCancel(Boolean.TRUE)
+                            .setVibrate(new long[]{1000, 500, 1000, 500})
+                            .setSmallIcon(R.mipmap.quaddro)
+                            .build();
+
+                    nm.notify(125, n);
+                }
             }
 
             @Override
@@ -76,24 +93,6 @@ public class MensagemService extends Service {
                 Log.e("RETROFIT", "PROBLEMAS", t);
             }
         });
-
-        // Notification
-        if (!list.isEmpty()) {
-            PendingIntent pi = PendingIntent.getActivity(c,
-                    500,
-                    new Intent(c, SQLiteActivity.class),
-                    PendingIntent.FLAG_ONE_SHOT);
-            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            Notification n = new Notification.Builder(c)
-                    .setContentTitle(c.getResources().getString(R.string.mensagem_criar))
-                    .setContentIntent(pi)
-                    .setAutoCancel(Boolean.TRUE)
-                    .setVibrate(new long[]{1000, 500, 1000, 500})
-                    .setSmallIcon(R.mipmap.quaddro)
-                    .build();
-
-            nm.notify(125, n);
-        }
 
         return super.onStartCommand(intent, flags, startId);
     }
