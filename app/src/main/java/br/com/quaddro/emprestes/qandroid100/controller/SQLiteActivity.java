@@ -88,7 +88,12 @@ public class SQLiteActivity extends ListActivity {
             @Override
             public View newView(Context context, Cursor cursor, ViewGroup parent) {
                 LayoutInflater li = LayoutInflater.from(context);
-                return li.inflate(R.layout.mensagem_view, null);
+                View v = li.inflate(R.layout.mensagem_view, null);
+                WebView wv = (WebView) v.findViewById(R.id.web_title);
+                wv.getSettings().setDefaultTextEncodingName("UTF-8");
+                wv = (WebView) v.findViewById(R.id.web_body);
+                wv.getSettings().setDefaultTextEncodingName("UTF-8");
+                return v;
             }
 
             @Override
@@ -100,12 +105,12 @@ public class SQLiteActivity extends ListActivity {
                 index = cursor.getColumnIndex(Entity.Mensagem.Columns.TITULO);
                 data = cursor.getString(index);
                 wv = (WebView) view.findViewById(R.id.web_title);
-                wv.loadData(String.format("<html><head><meta charset=\"UTF-8\"></head><body>%s</body></html>", data), "text/html", "UTF-8");
+                wv.loadData(String.format("<html><body>%s</body></html>", data), "text/html; charset=utf-8", "UTF-8");
 
                 index = cursor.getColumnIndex(Entity.Mensagem.Columns.CORPO);
                 data = cursor.getString(index);
                 wv = (WebView) view.findViewById(R.id.web_body);
-                wv.loadData(String.format("<html><head><meta charset=\"UTF-8\"></head><body>%s</body></html>", data), "text/html", "UTF-8");
+                wv.loadData(String.format("<html><body>%s</body></html>", data), "text/html; charset=utf-8", "UTF-8");
             }
         });
 

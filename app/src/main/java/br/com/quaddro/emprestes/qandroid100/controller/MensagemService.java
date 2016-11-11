@@ -62,6 +62,8 @@ public class MensagemService extends Service {
                 list = response.body();
                 i = list.iterator();
 
+                // helper.apagarTodas();
+
                 while (i.hasNext()) {
                     helper.inserir(i.next());
                 }
