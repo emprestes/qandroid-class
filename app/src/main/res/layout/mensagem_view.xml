@@ -3,30 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/carro_nome"
+    <WebView
+        android:id="@+id/web_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="@integer/normal"
-        android:inputType="text"
-        android:hint="@string/carro_nome" />
+        android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/carro_fabricante"
+    <WebView
+        android:id="@+id/web_body"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="@integer/normal"
-        android:inputType="text"
-        android:hint="@string/carro_fabricante" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/carro_alterar"
-            android:onClick="salvar" />
-    </LinearLayout>
+        android:layout_height="wrap_content" />
 </LinearLayout>

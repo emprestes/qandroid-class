@@ -1,6 +1,7 @@
 package br.com.quaddro.emprestes.qandroid100.controller;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,9 +10,12 @@ import android.support.v4.widget.CursorAdapter;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 
 import br.com.quaddro.emprestes.qandroid100.R;
@@ -80,15 +84,40 @@ public class SQLiteActivity extends ListActivity {
 
         Cursor c = MensagemSQLiteHelper.getInstance(this).listarTodas();
 
-        setListAdapter(new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_2,
-                c,
-                Entity.Mensagem.SQL.Select.ALL,
-                new int[] {
-                        android.R.id.text1,
-                        android.R.id.text2
-                },
-                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER));
+        setListAdapter(new CursorAdapter(this, c, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER) {
+            @Override
+            public View newView(Context context, Cursor cursor, ViewGroup parent) {
+                LayoutInflater li = LayoutInflater.from(context);
+                return li.inflate(R.layout.mensagem_view, null);
+            }
+
+            @Override
+            public void bindView(View view, Context context, Cursor cursor) {
+                WebView wv;
+                String data;
+                int index;
+
+                index = cursor.getColumnIndex(Entity.Mensagem.Columns.TITULO);
+                data = cursor.getString(index);
+                wv = (WebView) view.findViewById(R.id.web_title);
+                wv.loadData(String.format("<html><head><meta charset=\"UTF-8\"></head><body>%s</body></html>", data), "text/html", "UTF-8");
+
+                index = cursor.getColumnIndex(Entity.Mensagem.Columns.CORPO);
+                data = cursor.getString(index);
+                wv = (WebView) view.findViewById(R.id.web_body);
+                wv.loadData(String.format("<html><head><meta charset=\"UTF-8\"></head><body>%s</body></html>", data), "text/html", "UTF-8");
+            }
+        });
+
+//        setListAdapter(new SimpleCursorAdapter(this,
+//                android.R.layout.simple_list_item_2,
+//                c,
+//                Entity.Mensagem.SQL.Select.ALL,
+//                new int[] {
+//                        android.R.id.text1,
+//                        android.R.id.text2
+//                },
+//                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER));
     }
 
     @Override
