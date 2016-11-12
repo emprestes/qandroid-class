@@ -17,7 +17,7 @@
     <string name="aula20a">Aula 20 - Vibrator</string>
     <string name="aula20b">Aula 20 - Jogo com Bola</string>
     <string name="aula22">Aula 22</string>
-    <string name="aula23">Aula 23</string>
+    <string name="aula23">Aula 23 - BindService</string>
     <string name="aula24">Aula 24</string>
     <string name="aula25">Aula 25</string>
     <string name="megasena_label">MegaSena</string>
@@ -76,6 +76,8 @@
     <string name="cep_endereco">Endereço</string>
     <string name="cep">CEP</string>
     <string name="cep_buscar">Buscar</string>
+    <string name="bound_exibir">Agora</string>
+    <string name="bound_parar_servico">Parar Serviço</string>
 
     <string-array name="emails">
         <item>Casa</item>

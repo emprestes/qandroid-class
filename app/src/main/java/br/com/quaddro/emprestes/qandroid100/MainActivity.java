@@ -9,6 +9,7 @@ import android.view.View;
 
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.BoundActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CEPActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.ChatHeadActivity;
@@ -58,6 +59,7 @@ public class MainActivity extends QuaddroActivity {
         setOnClickActivity(R.id.btn_aula_20b, JogoBolaActivity.class);
         setOnClickActivity(R.id.btn_aula_21a, GPSActivity.class);
         setOnClickActivity(R.id.btn_aula_21b, CEPActivity.class);
+        setOnClickActivity(R.id.btn_aula_23, BoundActivity.class);
     }
 
     @Override
