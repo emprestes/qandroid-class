@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import br.com.quaddro.emprestes.qandroid100.api.QuaddroActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.ASyncActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.AnimacaoActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.BoundActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CEPActivity;
@@ -17,6 +18,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.DrawerActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.FileCSVActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.GPSActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.JogoBolaActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.MapsActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.MensagemService;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SQLiteActivity;
@@ -60,6 +62,8 @@ public class MainActivity extends QuaddroActivity {
         setOnClickActivity(R.id.btn_aula_21a, GPSActivity.class);
         setOnClickActivity(R.id.btn_aula_21b, CEPActivity.class);
         setOnClickActivity(R.id.btn_aula_23, BoundActivity.class);
+        setOnClickActivity(R.id.btn_aula_24a, ASyncActivity.class);
+        setOnClickActivity(R.id.btn_aula_24b, MapsActivity.class);
     }
 
     @Override

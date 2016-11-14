@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "925014710441",
+    "firebase_url": "https://my-cloud-10267.firebaseio.com",
+    "project_id": "my-cloud-10267",
+    "storage_bucket": "my-cloud-10267.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925014710441:android:c58354206238f7a1",
+        "android_client_info": {
+          "package_name": "br.com.quaddro.emprestes.qandroid100"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925014710441-oj6c7asftsobj5g4tlbfdasqc5326ba6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.quaddro.emprestes.qandroid100",
+            "certificate_hash": "FF2374CE7A584BA14645BE15D3639B68A62E8C99"
+          }
+        },
+        {
+          "client_id": "925014710441-i5c6aj8suo4n6cf8nmhtqr3pggl0eabl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq8QrbkzigVJPt1xF-JnnpQrtRrSvH2VU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925014710441-i5c6aj8suo4n6cf8nmhtqr3pggl0eabl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

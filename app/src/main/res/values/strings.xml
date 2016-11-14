@@ -18,7 +18,8 @@
     <string name="aula20b">Aula 20 - Jogo com Bola</string>
     <string name="aula22">Aula 22</string>
     <string name="aula23">Aula 23 - BindService</string>
-    <string name="aula24">Aula 24</string>
+    <string name="aula24a">Aula 24 - AsyncTask</string>
+    <string name="aula24b">Aula 24 - Maps</string>
     <string name="aula25">Aula 25</string>
     <string name="megasena_label">MegaSena</string>
     <string name="company">Quaddro</string>
@@ -84,4 +85,8 @@
         <item>Trabalho</item>
         <item>Outros</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="tv_espera">Espera em segundos:</string>
+    <string name="bt_rodar">Executar</string>
+    <string name="_5">5</string>
 </resources>
