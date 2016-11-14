@@ -73,6 +73,7 @@ public class ASyncActivity extends QuaddroActivity {
         protected void onPostExecute(String s) {
             pd.dismiss();
             tv.setText(s);
+            resp = "";
         }
 
         @Override
