@@ -123,6 +123,12 @@
             android:layout_height="wrap_content" />
 
         <Button
+            android:id="@+id/btn_aula_24c"
+            android:text="@string/aula24c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
             android:id="@+id/btn_aula_25"
             android:text="@string/aula25"
             android:layout_width="match_parent"

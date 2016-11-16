@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@android:id/list" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_previous"
+            android:id="@+id/mediaPrevious"
+            android:layout_weight="1"
+            android:contentDescription="@string/mediaPrevious"
+            android:onClick="onClickPrevious" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:id="@+id/mediaPlay"
+            android:layout_weight="1"
+            android:contentDescription="@string/mediaPlay"
+            android:onClick="onClickPlay" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_next"
+            android:id="@+id/mediaNext"
+            android:layout_weight="1"
+            android:contentDescription="@string/mediaNext"
+            android:onClick="onClickNext" />
+    </LinearLayout>
+</LinearLayout>

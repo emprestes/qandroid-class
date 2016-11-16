@@ -20,7 +20,8 @@
     <string name="aula23">Aula 23 - BindService</string>
     <string name="aula24a">Aula 24 - AsyncTask</string>
     <string name="aula24b">Aula 24 - Maps</string>
-    <string name="aula25">Aula 25</string>
+    <string name="aula24c">Aula 24 - Contatos</string>
+    <string name="aula25">Aula 25 - Player</string>
     <string name="megasena_label">MegaSena</string>
     <string name="company">Quaddro</string>
     <string name="carregando">Carregando…</string>
@@ -89,4 +90,7 @@
     <string name="tv_espera">Espera em segundos:</string>
     <string name="bt_rodar">Executar</string>
     <string name="_5">5</string>
+    <string name="mediaPrevious">Voltar</string>
+    <string name="mediaPlay">Tocar</string>
+    <string name="mediaNext">Próximo</string>
 </resources>

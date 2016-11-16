@@ -14,6 +14,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.BoundActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CEPActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.CameraActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.ChatHeadActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.ContactsActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.DrawerActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.FileCSVActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.GPSActivity;
@@ -21,6 +22,7 @@ import br.com.quaddro.emprestes.qandroid100.controller.JogoBolaActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.MapsActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.MensagemService;
 import br.com.quaddro.emprestes.qandroid100.controller.OiActivity;
+import br.com.quaddro.emprestes.qandroid100.controller.PlayerActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SQLiteActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SharedPreferenceActivity;
 import br.com.quaddro.emprestes.qandroid100.controller.SpinnerActivity;
@@ -64,6 +66,8 @@ public class MainActivity extends QuaddroActivity {
         setOnClickActivity(R.id.btn_aula_23, BoundActivity.class);
         setOnClickActivity(R.id.btn_aula_24a, ASyncActivity.class);
         setOnClickActivity(R.id.btn_aula_24b, MapsActivity.class);
+        setOnClickActivity(R.id.btn_aula_24c, ContactsActivity.class);
+        setOnClickActivity(R.id.btn_aula_25, PlayerActivity.class);
     }
 
     @Override
